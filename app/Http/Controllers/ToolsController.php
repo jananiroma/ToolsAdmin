@@ -48,7 +48,7 @@ class ToolsController extends Controller
     {
     	$types = Type::all();
     	$areas = Area::all();
-      $responsibles = Responsible::all();
+        $responsibles = Responsible::all();
     	return view('tools/index')->with(['types' => $types, 'areas' => $areas]);
     }
 
