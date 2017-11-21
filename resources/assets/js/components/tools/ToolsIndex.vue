@@ -44,11 +44,11 @@
             </div>
 
             <!-- Create Tool Modal -->
-            <div class="modal fade" id="create-tool" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal" id="create-tool" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" @click="cierraModal('create-tool')" aria-label="Close"><span class="glyphicon glyphicon-remove"></span></button>
+                            <button type="button" class="close" @click="cierraModal('create-tool')" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <h4 class="modal-title" id="myModalLabel">Registrar Herramienta</h4>
                         </div>
                         <div class="modal-body">
@@ -120,7 +120,7 @@
                                 <div class="form-group ">
                                     <button type="button" id="button" class="btn btn-primary btn-lg btn-block" @click="registerTool">Registrar</button>
                                 </div>
-                                
+                
                             </form>
                         </div>
                     </div>
@@ -381,13 +381,13 @@
                 .post('/tools', input)
                 .then( function(response) {
                     if(response.data.status == 1) {
-                        toastr.success( 'Se almacenó correctamente.', '¡Éxito!', { timeOut: 5000 } );
+                        toastr.success( 'Se almacenó correctamente.', '¡Éxito!', { timeOut: 5000 });
                         self.newTool = { 'name': '', 'description': '', 'area_id': '', 'type_id': '', 'responsible_id': '' };
                         self.getTools();
                         $('#create-tool').modal('hide');
                     }
                     else {
-                        toastr.error( 'Debes rellenar todos los campos.', '¡Error!', { timeOut: 5000 } );
+                        toastr.error( 'Debes rellenar todos los campos.', '¡Error!', { timeOut: 5000 });
                         self.formErrors = response.data.errors;
                         setTimeout(function() { self.formErrors = {}; }, 3000);
                     }

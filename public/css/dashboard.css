@@ -491,7 +491,7 @@ header {
     display: none;
 }
 .close, .close:focus, .close:hover {
-    color: #fff;;
+    color: #fff;
     opacity: 1;
     text-shadow: none;
 }
@@ -499,7 +499,7 @@ header {
     border: 1px solid #d4d9e3;
     font-size: 14px;
     font-weight: 300;
-    margin: 5px 0;
+    /*margin: 5px 0;*/
     padding: 14px 10px;
     width: 100%;
     color: #8492af;

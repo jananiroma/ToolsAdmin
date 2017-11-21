@@ -67,7 +67,6 @@ class ToolsController extends Controller
         }
 
         $tool = \App\Tool::create($request->all());
-
         return response()->json(['status' => 1, 'tool' => $tool]);
     }
 
